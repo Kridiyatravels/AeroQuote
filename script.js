@@ -9,6 +9,18 @@ let ticketPriceInput= document.getElementById("ticket-price").value;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
 let totalPrice= Number(ticketPriceInput)+ Number(serviceChargeInput);
+let quotation=`FLIGHT QUOTATION
+
+Flight: ${airlineName}
+From: ${departureCity}
+To: ${destinationCity}
+Travel Date: ${travelDate}
+Baggage: ${baggageAllowance} kg
+Fare: AED ${totalPrice}`;
+
+
+console.log(quotation);
+document.getElementById("quote-result").textContent=quotation;
 console.log(airlineName);
 console.log(departureCity);
 console.log(destinationCity);
