@@ -1,0 +1,40 @@
+body {
+    background-color: #ecfdf5;
+    color: #000000;
+    font-family:garamond, serif;
+    margin: 30px;
+    padding: 10px;
+}
+
+#quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+button{
+    background-color: #0f766e;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#quote-result{
+    padding: 11px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    max-width: 350px;
+    white-space: prewrap;
+}
