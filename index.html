@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>AeroQuote</title>
-    </head>
-    <body>
-        <h1>AeroQuote</h1>
-        <h2>Flight Quotation Generator</h2>
-        <p>create flight quotes easily</p>
+
+<head>
+    <title>AeroQuote</title>
+</head>
+
+<body>
+    <h1>AeroQuote</h1>
+    <h2>Flight Quotation Generator</h2>
+    <p>create flight quotes easily</p>
+    <form id="quote-form">
         <label for="airline">Airline name:</label>
         <input type="text" id="airline" name="airline">
         <label for="departure">Departure City:</label>
@@ -14,12 +17,17 @@
         <label for="destination">Destination City:</label>
         <input type="text" id="destination" name="destination">
         <label for="travel">Travel Date:</label>
-        <input type="date" id="travel" name="travel">    
+        <input type="date" id="travel" name="travel">
         <label for="ticket-price">Ticket Price (AED):</label>
         <input type="number" id="ticket-price" name="ticket-price" min="0" step="0.01">
         <label for="service-charge">Service Charge (AED):</label>
         <input type="number" id="service-charge" name="service-charge" min="0" step="0.01">
-        <label for="baggage">Baggage Allowance (KG):</label>
+        <label for="baggage">Baggage Allowance (kg):</label>
         <input type="text" id="baggage" name="baggage">
-    </body>
+        <button type="button" id="generate-quotation">Generate Quotation</button>
+    </form>
+    <h2>Flight Quotation</h2>
+    <pre id="quote-result">your quote will appear here.</pre>
+</body>
+
 </html>
