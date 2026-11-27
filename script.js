@@ -130,5 +130,8 @@ document.getElementById("infants-minus").addEventListener("click", function(){
     document.getElementById("infants").stepDown();
     generateQuote();
 });
-
+document.getElementById("passenger-toggle").addEventListener("click", function(){
+    let passengerDetails= document.getElementById("passenger-details");
+    passengerDetails.hidden= !passengerDetails.hidden;
+});
 generateQuote();
