@@ -4,7 +4,10 @@ function generateQuote(){
 let airlineName= document.getElementById("airline").value;
 let departureCity= document.getElementById("departure").value;
 let destinationCity= document.getElementById("destination").value;
-let travelDate= document.getElementById("travel").value;
+let departureDate= document.getElementById("departure-date").value;
+let departureTime= document.getElementById("departure-time").value;
+let arrivalDate= document.getElementById("arrival-date").value;
+let arrivalTime= document.getElementById("arrival-time").value;
 let ticketPriceInput= document.getElementById("ticket-price").value;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
@@ -14,7 +17,10 @@ let quotation= `FLIGHT QUOTATION
 Flight: ${airlineName}
 From: ${departureCity}
 To: ${destinationCity}
-Travel Date: ${travelDate}
+Departure date: ${departureDate}
+Departure time: ${departureTime}
+Arrival date: ${arrivalDate}
+Arrival Time: ${arrivalTime}
 Baggage: ${baggageAllowance} kg
 Fare: AED ${totalPrice}`;
 
