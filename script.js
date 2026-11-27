@@ -21,6 +21,10 @@ let baggageAllowance= document.getElementById("baggage").value;
 let adults= Number(document.getElementById("adults").value);
 let children= Number(document.getElementById("children").value);
 let infants=Number(document.getElementById("infants").value);
+if (infants > adults){
+    infants= adults;
+    document.getElementById("infants").value= infants;
+}
 let totalPassengers= adults + children + infants;
 console.log("Total passengers:", totalPassengers);
 let returnAirline= document.getElementById("return-airline").value;
