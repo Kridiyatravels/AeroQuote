@@ -19,6 +19,14 @@ console.log(durationMilliseconds);
 let totalMinutes= durationMilliseconds/ 60000;
 let durationHours= Math.floor(totalMinutes/ 60);
 let durationMinutes= totalMinutes% 60;
+
+let durationText;
+if (Number.isFinite(durationMilliseconds)&& durationMilliseconds>0){
+durationText= `${durationHours} Hrs ${durationMinutes} Mins`;
+}else{
+    durationText= "Unavailable";
+}
+
 let quotation= `FLIGHT QUOTATION
 
 Flight: ${airlineName}
@@ -28,7 +36,7 @@ Departure date: ${departureDate}
 Departure time: ${departureTime}
 Arrival date: ${arrivalDate}
 Arrival Time: ${arrivalTime}
-Duration: ${durationHours} hours and ${durationMinutes} mins
+Duration: ${durationText}
 Baggage: ${baggageAllowance} kg
 Fare: AED ${totalPrice}`;
 
