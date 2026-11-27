@@ -12,6 +12,14 @@
     <h2>Flight Quotation Generator</h2>
     <p>create flight quotes easily</p>
     <form id="quote-form">
+        <label>
+            <input type="radio" name="trip-type" value="one-way" checked>
+            One Way
+        </label>
+        <label>
+            <input type="radio" name="trip-type" value="round-trip">
+            Round Trip
+        </label>
         <label for="airline">Airline name:</label>
         <input type="text" id="airline" name="airline">
         <label for="departure">Departure City:</label>
@@ -32,6 +40,7 @@
         <input type="date" id="arrival-date" name="arrival-date">
         <label for="arrival-time">Arrival Time:</label>
         <input type="time" id="arrival-time" name="arrival-time">
+
         <button type="button" id="generate-quotation">Generate Quotation</button>
     </form>
     <h2>Flight Quotation</h2>
