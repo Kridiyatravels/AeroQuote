@@ -3,6 +3,11 @@ console.log("AeroQuote is ready!");
 function generateQuote(){
     let tripType= document.querySelector( `input[name="trip-type"]:checked`).value;
     console.log("Trip type:", tripType);
+    if (tripType==="one-way"){
+        document.getElementById("return-flight").hidden=true;
+    }else{
+        document.getElementById("return-flight").hidden=false;
+    }
     let airlineName= document.getElementById("airline").value;
     let departureCity= document.getElementById("departure").value;
     let destinationCity= document.getElementById("destination").value;
