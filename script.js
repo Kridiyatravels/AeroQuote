@@ -12,6 +12,13 @@ let ticketPriceInput= document.getElementById("ticket-price").value;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
 let totalPrice= Number(ticketPriceInput)+ Number(serviceChargeInput);
+let departureDateTime= new Date(`${departureDate}T${departureTime}`);
+let arrivalDateTime= new Date(`${arrivalDate}T${arrivalTime}`);
+let durationMilliseconds= arrivalDateTime-departureDateTime;
+console.log(durationMilliseconds);
+let totalMinutes= durationMilliseconds/ 60000;
+let durationHours= Math.floor(totalMinutes/ 60);
+let durationMinutes= totalMinutes% 60;
 let quotation= `FLIGHT QUOTATION
 
 Flight: ${airlineName}
@@ -21,6 +28,7 @@ Departure date: ${departureDate}
 Departure time: ${departureTime}
 Arrival date: ${arrivalDate}
 Arrival Time: ${arrivalTime}
+Duration: ${durationHours} hours and ${durationMinutes} mins
 Baggage: ${baggageAllowance} kg
 Fare: AED ${totalPrice}`;
 
