@@ -1,11 +1,13 @@
 console.log("AeroQuote is ready!");
 
 function generateQuote(){
-let airlineName= document.getElementById("airline").value;
-let departureCity= document.getElementById("departure").value;
-let destinationCity= document.getElementById("destination").value;
-let departureDate= document.getElementById("departure-date").value;
-let departureTime= document.getElementById("departure-time").value;
+    let tripType= document.querySelector( `input[name="trip-type"]:checked`).value;
+    console.log("Trip type:", tripType);
+    let airlineName= document.getElementById("airline").value;
+    let departureCity= document.getElementById("departure").value;
+    let destinationCity= document.getElementById("destination").value;
+    let departureDate= document.getElementById("departure-date").value;
+    let departureTime= document.getElementById("departure-time").value;
 let arrivalDate= document.getElementById("arrival-date").value;
 let arrivalTime= document.getElementById("arrival-time").value;
 let ticketPriceInput= document.getElementById("ticket-price").value;
