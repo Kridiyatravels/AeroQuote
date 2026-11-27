@@ -26,6 +26,8 @@ if (infants > adults){
     document.getElementById("infants").value= infants;
 }
 let totalPassengers= adults + children + infants;
+let passengerText= totalPassengers === 1? "Passenger" : "Passengers";
+document.getElementById("passenger-toggle").textContent= `${totalPassengers} ${passengerText}`;
 console.log("Total passengers:", totalPassengers);
 document.getElementById("adults-minus").disabled= adults <= 1;
 document.getElementById("adults-plus").disabled= adults >= 9;
