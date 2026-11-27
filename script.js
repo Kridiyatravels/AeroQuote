@@ -99,3 +99,28 @@ document.getElementById("quote-result").textContent=quotation;
 document.getElementById("generate-quotation").addEventListener("click",generateQuote);
 
 document.getElementById("quote-form").addEventListener("input",generateQuote);
+document.getElementById("adults-plus").addEventListener("click", function(){
+    document.getElementById("adults").stepUp();
+    generateQuote();
+});
+
+document.getElementById("adults-minus").addEventListener("click", function(){
+    document.getElementById("adults").stepDown();
+    generateQuote();
+});
+document.getElementById("children-plus").addEventListener("click", function(){
+    document.getElementById("children").stepUp();
+    generateQuote();
+});
+document.getElementById("children-minus").addEventListener("click",function(){
+  document.getElementById("children").stepDown();
+  generateQuote();  
+});
+document.getElementById("infants-plus").addEventListener("click", function(){
+    document.getElementById("infants").stepUp();
+    generateQuote();
+});
+document.getElementById("infants-minus").addEventListener("click", function(){
+    document.getElementById("infants").stepDown();
+    generateQuote();
+});

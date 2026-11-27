@@ -21,13 +21,25 @@
             Round Trip
         </label>
                 <div id="passenger-details">
-        <h3>passengers</h3>
-        <label for="adults">Adults (12+ years)</label>
-        <input type="number" id="adults" min="1" max="8" value="1" step="1">
-        <label for="children">Children (2-11 years)</label>
+<h3>Passengers</h3>
+<label for="adults">Adults (12+years)</label>
+<div class="counter">
+    <button type="button" id="adults-minus">-</button>
+    <input type="number" id="adults" min="1" max="9" value="1" step="1">
+    <button type="button" id="adults-plus">+</button>
+    </div>
+    <label for="children">Children (2-11 years)</label>
+    <div class="counter">
+        <button type="button" id="children-minus">-</button>
         <input type="number" id="children" min="0" max="8" value="0" step="1">
-        <label for="infants">Infants (under 2 years)</label>
-        <input type="number" id="infants" min="0" max="8" value="0" step="1">
+        <button type="button" id="children-plus">+</button>
+    </div>
+     <label for="infants">Infants (under 2 years)</label>
+    <div class="counter">
+        <button type="button" id="infants-minus">-</button>
+        <input type="number" id="infants" min="0" max="9" value="0" step="1">
+        <button type="button" id="infants-plus">+</button>
+    </div>
     </div>
         <label for="airline">Airline name:</label>
         <input type="text" id="airline" name="airline">
