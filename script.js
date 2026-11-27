@@ -27,6 +27,12 @@ if (infants > adults){
 }
 let totalPassengers= adults + children + infants;
 console.log("Total passengers:", totalPassengers);
+document.getElementById("adults-minus").disabled= adults <= 1;
+document.getElementById("adults-plus").disabled= adults >= 9;
+document.getElementById("children-minus").disabled= children <= 0;
+document.getElementById("children-plus").disabled= children >= 8;
+document.getElementById("infants-minus").disabled= infants <= 0;
+document.getElementById("infants-plus").disabled= infants >= adults;
 let returnAirline= document.getElementById("return-airline").value;
 let returnDepartureCity= document.getElementById("return-departure").value;
 let returnDestinationCity= document.getElementById("return-destination").value;
@@ -124,3 +130,5 @@ document.getElementById("infants-minus").addEventListener("click", function(){
     document.getElementById("infants").stepDown();
     generateQuote();
 });
+
+generateQuote();
