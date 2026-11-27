@@ -20,6 +20,15 @@
             <input type="radio" name="trip-type" value="round-trip">
             Round Trip
         </label>
+                <div id="passenger-details">
+        <h3>passengers</h3>
+        <label for="adults">Adults (12+ years)</label>
+        <input type="number" id="adults" min="1" max="8" value="1" step="1">
+        <label for="children">Children (2-11 years)</label>
+        <input type="number" id="children" min="0" max="8" value="0" step="1">
+        <label for="infants">Infants (under 2 years)</label>
+        <input type="number" id="infants" min="0" max="8" value="0" step="1">
+    </div>
         <label for="airline">Airline name:</label>
         <input type="text" id="airline" name="airline">
         <label for="departure">Departure City:</label>
