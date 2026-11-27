@@ -18,6 +18,13 @@ let arrivalTime= document.getElementById("arrival-time").value;
 let ticketPriceInput= document.getElementById("ticket-price").value;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
+let returnAirline= document.getElementById("return-airline").value;
+let returnDepartureCity= document.getElementById("return-departure").value;
+let returnDestinationCity= document.getElementById("return-destination").value;
+let returnDepartureDate= document.getElementById("return-departure-date").value;
+let returnDepartureTime= document.getElementById("return-departure-time").value;
+let returnArrivalDate= document.getElementById("return-arrival-date").value;
+let returnArrivalTime=document.getElementById("return-arrival-time").value;
 let totalPrice= Number(ticketPriceInput)+ Number(serviceChargeInput);
 let departureDateTime= new Date(`${departureDate}T${departureTime}`);
 let arrivalDateTime= new Date(`${arrivalDate}T${arrivalTime}`);
@@ -33,19 +40,48 @@ durationText= `${durationHours} Hrs ${durationMinutes} Mins`;
 }else{
     durationText= "Unavailable";
 }
+let returnDepartureDateTime= new Date(`${returnDepartureDate}T${returnDepartureTime}`);
+let returnArrivalDateTime= new Date(`${returnArrivalDate}T${returnArrivalTime}`);
+let returnDurationMilliseconds= returnArrivalDateTime-returnDepartureDateTime;
+let returnTotalMinutes= returnDurationMilliseconds/ 60000;
+let returnDurationHours= Math.floor(returnTotalMinutes/ 60);
+let returnDurationMinutes= returnTotalMinutes% 60;
 
-let quotation= `FLIGHT QUOTATION
-
+let returnDurationText;
+if (Number.isFinite(returnDurationMilliseconds)&& returnDurationMilliseconds>0){
+    returnDurationText= `${returnDurationHours} hrs ${returnDurationMinutes} Mins`;
+} else{
+    returnDurationText= "Unavailable";
+}
+console.log("ReturnDurationText:", returnDurationText);
+let quotation=`Flight Quotation
 Flight: ${airlineName}
 From: ${departureCity}
 To: ${destinationCity}
 Departure date: ${departureDate}
 Departure time: ${departureTime}
 Arrival date: ${arrivalDate}
-Arrival Time: ${arrivalTime}
-Duration: ${durationText}
-Baggage: ${baggageAllowance} kg
+Arrival time: ${arrivalTime}
+Duration: ${durationText}`;
+
+if (tripType==="round-trip"){
+    quotation+=`
+RETURN FLIGHT
+Flight: ${returnAirline}
+From: ${returnDepartureCity}
+To: ${returnDestinationCity}
+Departure date: ${returnDepartureDate}
+Departure time: ${returnDepartureTime}
+Arrival date: ${returnArrivalDate}
+Arrival time: ${returnArrivalTime}
+Duration: ${returnDurationText}`;
+}
+quotation +=`
+
+Baggage: ${baggageAllowance}kg
 Fare: AED ${totalPrice}`;
+
+
 
 document.getElementById("quote-result").textContent=quotation;
 
