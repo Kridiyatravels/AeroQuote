@@ -1,5 +1,9 @@
 console.log("AeroQuote is ready!");
 
+function formatPrice(amount){
+    let rounded= Math.round(Number(amount));
+    return rounded.toLocaleString("en-US");
+}
 function generateQuote(){
     let tripType= document.querySelector( `input[name="trip-type"]:checked`).value;
     console.log("Trip type:", tripType);
@@ -110,18 +114,18 @@ Duration: ${returnDurationText}`;
 quotation +=`
 
 Baggage: ${baggageAllowance}kg
-Adults (${adults} x AED ${ticketPriceInput}): AED ${adultTotal}`;
+Adults (${adults} x AED ${formatPrice(ticketPriceInput)}): AED ${formatPrice(adultTotal)}`;
 
 if (children >0){
     quotation +=`
-Children (${children} x AED ${childPriceInput}): AED ${childTotal}`;
+Children (${children} x AED ${formatPrice(childPriceInput)}): AED ${formatPrice(childTotal)}`;
 }
 if (infants >0){
     quotation +=`
-Infants (${infants} x AED ${infantPriceInput}): AED ${infantTotal}`;
+Infants (${infants} x AED ${formatPrice(infantPriceInput)}): AED ${formatPrice(infantTotal)}`;
 }
 quotation +=`
-Fare: AED ${totalPrice}`;
+Fare: AED ${formatPrice(totalPrice)}`;
 
 
 document.getElementById("quote-result").textContent=quotation;
