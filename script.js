@@ -27,6 +27,7 @@ let hideFee = document.getElementById("hide-fee").checked;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
 let cabinBaggage= document.getElementById("cabin-baggage").value;
+let quoteValidity= document.getElementById("validity").value;
 let adults= Number(document.getElementById("adults").value);
 let children= Number(document.getElementById("children").value);
 let infants=Number(document.getElementById("infants").value);
@@ -148,7 +149,9 @@ if (!hideFee){
 Service fee = ${formatPrice(serviceChargeInput)}`;
 }
 quotation +=`
-Fare: AED ${formatPrice(totalPrice)}`;
+Fare: AED ${formatPrice(totalPrice)}
+
+Valid ${quoteValidity}. Price is not guaranteed until the ticket is issued.`;
 
 
 document.getElementById("quote-result").textContent=quotation;
