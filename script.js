@@ -13,6 +13,7 @@ function generateQuote(){
         document.getElementById("return-flight").hidden=false;
     }
     let airlineName= document.getElementById("airline").value;
+    let cabinClass= document.getElementById("cabin").value;
     let departureCity= document.getElementById("departure").value;
     let destinationCity= document.getElementById("destination").value;
     let departureDate= document.getElementById("departure-date").value;
@@ -123,6 +124,8 @@ Duration: ${returnDurationText}`;
 }
 quotation +=`
 
+Cabin: ${cabinClass}
+Passengers: ${passengerText}
 Baggage: ${baggageAllowance}kg`;
 if (hideFee && serviceFee % adults !== 0){
     quotation +=`
