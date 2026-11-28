@@ -70,14 +70,20 @@
 </div>
         <label for="service-charge">Service fee (AED):</label>
         <input type="number" id="service-charge" name="service-charge" min="0" step="1" value="60">
+        <label for="validity">Quote valid for</label>
+        <select id="validity" name="validity">
+            <option>24 hours</option>
+            <option selected>48 hours</option>
+            <option>72 hours</option>
+        </select>
         <label>
             <input type="checkbox" id="hide-fee">
             Hide service fee (show in total)
         </label>
         <label for="baggage">Checked baggage (kg):</label>
-        <input type="text" id="baggage" name="baggage">
+        <input type="number" id="baggage" name="baggage" min="0" max="99" value="30">
         <label for="cabin-baggage">Cabin baggage (kg):</label>
-        <input type="text" id="cabin-baggage" name="cabin-baggage">
+        <input type="number" id="cabin-baggage" name="cabin-baggage" min="0" max="99" value="7">
         <label for="departure-time">Departure Time:</label>
         <input type="time" id="departure-time" name="departure-time">
         <label for="arrival-date">Arrival Date:</label>
