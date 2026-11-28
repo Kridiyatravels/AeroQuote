@@ -22,6 +22,7 @@ let arrivalTime= document.getElementById("arrival-time").value;
 let ticketPriceInput= document.getElementById("ticket-price").value;
 let childPriceInput= document.getElementById("child-price").value;
 let infantPriceInput= document.getElementById("infant-price").value;
+let hideFee = document.getElementById("hide-fee").checked;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
 let adults= Number(document.getElementById("adults").value);
@@ -123,6 +124,10 @@ Children (${children} x AED ${formatPrice(childPriceInput)}): AED ${formatPrice(
 if (infants >0){
     quotation +=`
 Infants (${infants} x AED ${formatPrice(infantPriceInput)}): AED ${formatPrice(infantTotal)}`;
+}
+if (!hideFee){
+    quotation +=`
+Service fee = ${formatPrice(serviceChargeInput)}`;
 }
 quotation +=`
 Fare: AED ${formatPrice(totalPrice)}`;
