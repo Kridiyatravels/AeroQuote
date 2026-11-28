@@ -149,4 +149,7 @@ document.addEventListener("click", function(event){
         passengerDetails.hidden= true;
     }
 });
+document.getElementById("passenger-done").addEventListener("click", function(){
+    document.getElementById("passenger-details").hidden= true;
+});
 generateQuote();
