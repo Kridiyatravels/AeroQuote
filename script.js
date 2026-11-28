@@ -26,8 +26,14 @@ if (infants > adults){
     document.getElementById("infants").value= infants;
 }
 let totalPassengers= adults + children + infants;
-let passengerText= totalPassengers === 1? "Passenger" : "Passengers";
-document.getElementById("passenger-toggle").textContent= `${totalPassengers} ${passengerText}`;
+let passengerText= `${adults} ${adults===1? "Adult": "Adults"}`;
+if (children>0){
+    passengerText += `, ${children} ${children===1? "Child" :"Children"}`;
+}
+if (infants>0){
+    passengerText += `, ${infants} ${infants ===1? "Infant": "Infants"}`;
+}
+document.getElementById("passenger-toggle").textContent= passengerText;
 console.log("Total passengers:", totalPassengers);
 document.getElementById("adults-minus").disabled= adults <= 1;
 document.getElementById("adults-plus").disabled= adults >= 9;
@@ -142,6 +148,5 @@ document.addEventListener("click", function(event){
     if (!passengerDetails.contains(event.target)&& !passengerToggle.contains(event.target)){
         passengerDetails.hidden= true;
     }
-
 });
 generateQuote();
