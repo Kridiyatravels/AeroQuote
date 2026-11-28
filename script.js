@@ -7,6 +7,8 @@ function formatPrice(amount){
 function generateQuote(){
     let tripType= document.querySelector( `input[name="trip-type"]:checked`).value;
     console.log("Trip type:", tripType);
+    let messageFormat= document.querySelector(`input[name="fmt"]:checked`).value;
+    console.log("message format:", messageFormat);
     if (tripType==="one-way"){
         document.getElementById("return-flight").hidden=true;
     }else{
@@ -168,6 +170,8 @@ document.getElementById("quote-result").textContent=quotation;
 document.getElementById("generate-quotation").addEventListener("click",generateQuote);
 
 document.getElementById("quote-form").addEventListener("input",generateQuote);
+document.getElementById("wa").addEventListener("change",generateQuote);
+document.getElementById("em").addEventListener("change",generateQuote);
 document.getElementById("adults-plus").addEventListener("click", function(){
     document.getElementById("adults").stepUp();
     generateQuote();
