@@ -110,8 +110,18 @@ Duration: ${returnDurationText}`;
 quotation +=`
 
 Baggage: ${baggageAllowance}kg
-Fare: AED ${totalPrice}`;
+Adults (${adults} x AED ${ticketPriceInput}): AED ${adultTotal}`;
 
+if (children >0){
+    quotation +=`
+Children (${children} x AED ${childPriceInput}): AED ${childTotal}`;
+}
+if (infants >0){
+    quotation +=`
+Infants (${infants} x AED ${infantPriceInput}): AED ${infantTotal}`;
+}
+quotation +=`
+Fare: AED ${totalPrice}`;
 
 
 document.getElementById("quote-result").textContent=quotation;
