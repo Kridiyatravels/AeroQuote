@@ -25,6 +25,7 @@ let childPriceInput= document.getElementById("child-price").value;
 let infantPriceInput= document.getElementById("infant-price").value;
 let hideFee = document.getElementById("hide-fee").checked;
 let showBags= document.getElementById("show-bags").checked;
+let showBreakdown= document.getElementById("show-breakdown").checked;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
 let cabinBaggage= document.getElementById("cabin-baggage").value;
@@ -133,6 +134,7 @@ if (showBags){
 quotation +=`
 Baggage: ${baggageAllowance} kg checked + ${cabinBaggage} kg cabin`;
 }
+if (showBreakdown){ 
 if (hideFee && serviceFee % adults !== 0){
     quotation +=`
 Adults (${adults}): AED ${formatPrice(displayAdultTotal)}`;
@@ -151,6 +153,7 @@ Infants (${infants} x AED ${formatPrice(infantPriceInput)}): AED ${formatPrice(i
 if (!hideFee){
     quotation +=`
 Service fee = ${formatPrice(serviceChargeInput)}`;
+}
 }
 quotation +=`
 Fare: AED ${formatPrice(totalPrice)}
