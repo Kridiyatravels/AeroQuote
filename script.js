@@ -62,6 +62,15 @@ let childTotal= children* Number(childPriceInput);
 let infantTotal= infants * Number(infantPriceInput);
 let subtotal= adultTotal + childTotal + infantTotal;
 let totalPrice= subtotal + Number(serviceChargeInput);
+let serviceFee= Number(serviceChargeInput);
+let displayAdultPrice= Number(ticketPriceInput);
+let displayAdultTotal= adultTotal;
+if (hideFee){
+    displayAdultTotal += serviceFee;
+    if (serviceFee % adults === 0){
+        displayAdultPrice += serviceFee / adults;
+    }
+}
 let departureDateTime= new Date(`${departureDate}T${departureTime}`);
 let arrivalDateTime= new Date(`${arrivalDate}T${arrivalTime}`);
 let durationMilliseconds= arrivalDateTime-departureDateTime;
@@ -114,9 +123,14 @@ Duration: ${returnDurationText}`;
 }
 quotation +=`
 
-Baggage: ${baggageAllowance}kg
-Adults (${adults} x AED ${formatPrice(ticketPriceInput)}): AED ${formatPrice(adultTotal)}`;
-
+Baggage: ${baggageAllowance}kg`;
+if (hideFee && serviceFee % adults !== 0){
+    quotation +=`
+Adults (${adults}): AED ${formatPrice(displayAdultTotal)}`;
+} else{
+    quotation +=`
+Adults (${adults} x AED ${formatPrice(displayAdultPrice)}): AED ${formatPrice(displayAdultTotal)}`;
+}
 if (children >0){
     quotation +=`
 Children (${children} x AED ${formatPrice(childPriceInput)}): AED ${formatPrice(childTotal)}`;
