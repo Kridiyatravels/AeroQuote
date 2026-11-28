@@ -43,6 +43,8 @@ document.getElementById("children-minus").disabled= children <= 0;
 document.getElementById("children-plus").disabled= children >= 8;
 document.getElementById("infants-minus").disabled= infants <= 0;
 document.getElementById("infants-plus").disabled= infants >= adults;
+document.getElementById("child-price-group").hidden= children === 0;
+document.getElementById("infant-price-group").hidden= infants === 0;
 let returnAirline= document.getElementById("return-airline").value;
 let returnDepartureCity= document.getElementById("return-departure").value;
 let returnDestinationCity= document.getElementById("return-destination").value;
