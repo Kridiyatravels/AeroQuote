@@ -136,4 +136,12 @@ document.getElementById("passenger-toggle").addEventListener("click", function()
     let passengerDetails= document.getElementById("passenger-details");
     passengerDetails.hidden= !passengerDetails.hidden;
 });
+document.addEventListener("click", function(event){
+    let passengerDetails= document.getElementById("passenger-details");
+    let passengerToggle= document.getElementById("passenger-toggle");
+    if (!passengerDetails.contains(event.target)&& !passengerToggle.contains(event.target)){
+        passengerDetails.hidden= true;
+    }
+
+});
 generateQuote();
