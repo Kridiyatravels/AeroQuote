@@ -26,6 +26,7 @@ let infantPriceInput= document.getElementById("infant-price").value;
 let hideFee = document.getElementById("hide-fee").checked;
 let serviceChargeInput= document.getElementById("service-charge").value;
 let baggageAllowance= document.getElementById("baggage").value;
+let cabinBaggage= document.getElementById("cabin-baggage").value;
 let adults= Number(document.getElementById("adults").value);
 let children= Number(document.getElementById("children").value);
 let infants=Number(document.getElementById("infants").value);
@@ -126,7 +127,7 @@ quotation +=`
 
 Cabin: ${cabinClass}
 Passengers: ${passengerText}
-Baggage: ${baggageAllowance}kg`;
+Baggage: ${baggageAllowance} kg checked + ${cabinBaggage} kg cabin`;
 if (hideFee && serviceFee % adults !== 0){
     quotation +=`
 Adults (${adults}): AED ${formatPrice(displayAdultTotal)}`;
