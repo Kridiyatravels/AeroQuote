@@ -51,8 +51,12 @@
         <input type="text" id="destination" name="destination">
         <label for="departure-date">Departure Date:</label>
         <input type="date" id="departure-date" name="departure-date">
-        <label for="ticket-price">Ticket Price (AED):</label>
-        <input type="number" id="ticket-price" name="ticket-price" min="0" step="0.01">
+       <label for="ticket-price">Price per adult (AED):</label>
+       <input type="number" id="ticket-price" name="ticket-price" min="0" step="1">
+       <label for="child-price">Price per child (AED):</label>
+       <input type="number" id="child-price" name="child-price" min="0" step="1">
+       <label for="infant-price">Price per infant (AED):</label>
+       <input type="number" id="infant-price" name="infant-price" min="0" step="1" value="0">
         <label for="service-charge">Service Charge (AED):</label>
         <input type="number" id="service-charge" name="service-charge" min="0" step="0.01">
         <label for="baggage">Baggage Allowance (kg):</label>
